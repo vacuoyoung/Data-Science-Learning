@@ -37,3 +37,52 @@ Empty vectors can be created with the **Vector()** function
 可以用C（concatenate）作为连接赋值。将被赋值最低公共类型
 
 **Class** 函数识别对象类型，**as.complex()** 强制类型转换
+
+**Metrices** 矩阵，具有*dimension*这个*attributes*,
+```
+m<-matrix(nrow=2,ncol=3)
+dim(m)
+attributes(m)
+
+m<-matrix(1:12,nrow=3,ncol=4)
+```
+*or*
+```
+m<1:10
+dim(m)<-c(2,5)
+```
+or *cbind-ing* or *rbind-ing*
+```
+x<-1:3
+y<2:4
+cbing(x,y)
+rbing(x,y)
+```
+
+**Factors**, 记录分类数据
+```
+X<-facotr(c('yes','no,'yes))
+table(x)
+unclass(x)
+attributs(x) level
+```
+level 是默认按照字母顺序排列的，所以No是比Yes更前面的level，除非通过levels参数claim，*levels=c("yes","no")
+
+**Missing Values**, **NaN** or **NA**
+
+**is.na()** 判断是不是Na
+**is.nan()** 判断是不是NaN
+ NaN是NA的一种，NaN是不是数值数据，NA是不是数据
+
+ **Data Frames**, 数据框可以存储不同类型的数据。
+ *attributes*, row.names
+ read.table() or read.csv()
+ data.matrix()
+ data.frame(foo=1:4,bar=c(T,T,F,F))
+
+ R的对象可以拥有 **Names**,
+ ```names(x)<-c('f','b','c')
+ x<-1:3
+ ```
+**list**, list(a=1,b=2,c=4)
+ **matrix** dimnames("matrix")<-List(c("rowname",c("col name"))
