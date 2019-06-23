@@ -150,6 +150,7 @@ tabAll<-read.table('database.txt',colClasses=classes)
 - "[]", x[1],x[x>6]
 - "[[]]", from list or frame
 - "$", name
+- subset(x,expression, select="") ## 数据源，逻辑判断，返回的列。
 
 ```
 >x-<list(foo=1:4,bar=0.6)
@@ -171,3 +172,47 @@ x$a  ##自动返回最符合的
 x[["a"]] ##必须精准匹配
 X[["a",exact=FALSE]] ##关闭精确匹配
 ```
+
+**removing NA Values**
+```
+bad<-is.na(x) ##返回逻辑值
+x[!bad] ##去掉为True的
+```
+If there are multiple things that contains NA.
+```
+x<-c(1,2,NA,4,5,NA)
+y<-c("a","b","c",NA,NA)
+good<-complete.cases(x,y) ##返回x和y都不是NA的数值
+```
+
+**Vectorized Operation**
+- *x+y*, 依次向量相加
+- *x>2*,
+- *x*y*
+- *x/y*
+
+**Vectorized Matrix Operation**
+对矩阵的操作类似，也是vector相互操作，**%*%** 才是矩阵
+
+###Swirl###
+
+- type **?c**,会弹出帮助文件，不需要括号
+- list all the objects in your local workspace using **ls()**
+- **dir.create**在现有文件夹create 文件
+- **file** .create, rename, remove, info, exists, create, copy, path(构建文档路径)
+- **setwd** 设定工作文件夹
+
+
+**seq**,
+```
+seq(0,10,0.5) # from 1 to 10, 步长0.5
+seq(0,10,length=10) #数组长度10
+seq(along.with=vector) #长度和vector一样
+seq_along(vector) #内置函数，同上
+rep(0,times=40)
+rep(c(0,1,2,3),each=5)
+```
+
+**paste**
+```
+paste(strings, collapse" "), ## 把strings里的对象用空格连接
