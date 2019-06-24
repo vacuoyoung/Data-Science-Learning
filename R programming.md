@@ -31,6 +31,7 @@ Empty vectors can be created with the **Vector()** function
 
 **Inf** & **-Inf** infinity
 **NaN** 代表未定义数值 not a number
+**NA** 是个未有数值的占位符
 在R中，数据被当作实数处理，除非后面用 **L** 标记
 
 对象的另外一个属性，是attribute, **attributes()**
@@ -38,7 +39,7 @@ Empty vectors can be created with the **Vector()** function
 
 **Class** 函数识别对象类型，**as.complex()** 强制类型转换
 
-**Metrices** 矩阵，具有*dimension*这个*attributes*,
+**Metrices** 矩阵，具有*dimension*这个*attributes*, 所以给一个普通的vector 赋予dim（）就成为了矩阵，但是矩阵只能存储同一类数据
 ```
 m<-matrix(nrow=2,ncol=3)
 dim(m)
@@ -80,11 +81,14 @@ level 是默认按照字母顺序排列的，所以No是比Yes更前面的level�
  - read.table() or read.csv()
  - data.matrix() 构建一个matrix类型
  - data.frame(foo=1:4,bar=c(T,T,F,F))
+ - colnames()<-c()
+
 
 R的对象可以拥有 **Names**,
  ```
  names(x)<-c('f','b','c')
  x<-1:3
+ names(x)
  ```
 - **list**,
 ```
@@ -215,4 +219,12 @@ rep(c(0,1,2,3),each=5)
 
 **paste**
 ```
-paste(strings, collapse" "), ## 把strings里的对象用空格连接
+paste(strings, collapse" "), ##
+```
+
+**Subsetting**
+*index vectors*, 4 types,
+- logical, is.na()
+- positive integer
+- negtive integer  ## remove only those vectors
+- named elements
