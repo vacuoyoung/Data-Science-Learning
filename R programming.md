@@ -228,3 +228,30 @@ paste(strings, collapse" "), ##
 - positive integer
 - negtive integer  ## remove only those vectors
 - named elements
+
+###Control Structures###
+
+**if-else**
+**for**
+**while**
+**repeat**
+**next**
+**break**
+
+###Function###
+
+- *formal arguements* included in the function defination
+- Function arguments can be missing or might have defalt value
+- R functions arguments can be matched positionally bor by name
+
+```
+f<-function(<aguements>){
+   ## code block
+}
+```
+- *lazy evaluation* arguments to functions are evaluated only as needed
+
+**The ... Agrument**
+用于extention 现有的函数的参数，省略现有的参数。
+- 当不清楚有多少参数会被传递的时候也可以使用
+- 这之后的参数必须精确的描述（不可使用partial matching）
