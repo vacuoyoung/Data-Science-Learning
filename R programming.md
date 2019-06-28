@@ -255,3 +255,22 @@ f<-function(<aguements>){
 用于extention 现有的函数的参数，省略现有的参数。
 - 当不清楚有多少参数会被传递的时候也可以使用
 - 这之后的参数必须精确的描述（不可使用partial matching）
+
+###Logical Expression###
+- *which*, *all*,*any*
+  返回vector中数据序号，符合逻辑判断的
+- *&&* and *&*, *|* and *||*,  & 和 |会循环使用vector
+- xor（）强制或语句
+- isTRUE()
+
+###Function###
+- typing the funtion name without ay arguments or parenthese, then the source code will show
+- *argu* 可以check 函数的arguments
+
+**lapply**，list apply, lapply returns a list of the same length as X, each element of which is the result of applying FUN to the corresponding element of X.
+
+```
+lapply(x,fun) # funcition operation on x
+```
+
+**sapply**, simply version of lapply  
