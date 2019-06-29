@@ -238,6 +238,8 @@ paste(strings, collapse" "), ##
 **next**
 **break**
 
+###Environment###
+The default Environment for R is always the global enviroment, equal to your workspace, and then it will search the packages that loaded. the base package is always the last one to search, so you have to choose which packages loaded.
 ###Function###
 
 - *formal arguements* included in the function defination
@@ -274,3 +276,22 @@ lapply(x,fun) # funcition operation on x
 ```
 
 **sapply**, simply version of lapply  
+
+###Dates and Times###
+
+**Dates** are represented by the "Date" class
+**Time** are represented by the"POSIXct" and "POSIXlt"classes
+Dates are stored as the number of dates since 1970-01-01, and times are stored as the seconds since 1970-01-01 (POSIXct) or a list of seconds, minutes, hours, (for POSIXlt)
+
+```
+Sys.Date() # return current date
+Sys.Time() #return current time
+as.Date("1969-01-01")  # give the value of 19690101
+unclass() #view what's inside the vector
+POSIXlt(Sys.time())  # reture the time with POSIXlt type
+weekdays()  # returen 星期几
+months()  # returen the month
+quarters() # returen the quarter
+ t4<-strptime(t3,"%B %d, %Y %H:%M") #change the string with month, date, year, hour:min into a time class
+ difftime(Systime(),t1,units="days") #返回两个时间差距的units
+ 
