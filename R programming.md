@@ -39,7 +39,7 @@ Empty vectors can be created with the **Vector()** function
 
 **Class** 函数识别对象类型，**as.complex()** 强制类型转换
 
-**Metrices** 矩阵，具有*dimension*这个*attributes*, 所以给一个普通的vector 赋予dim（）就成为了矩阵，但是矩阵只能存储同一类数据
+**Metrix** 矩阵，具有*dimension*这个*attributes*, 所以给一个普通的vector 赋予dim（）就成为了矩阵，但是矩阵只能存储同一类数据
 ```
 m<-matrix(nrow=2,ncol=3)
 dim(m)
@@ -85,6 +85,7 @@ level 是默认按照字母顺序排列的，所以No是比Yes更前面的level�
 
 
 R的对象可以拥有 **Names**,
+- Vector
  ```
  names(x)<-c('f','b','c')
  x<-1:3
@@ -102,7 +103,7 @@ dimnames("matrix")<-List(c("rowname",c("col name"))
 ```
 
 **Read Tabular Data**
-- read.table(), contains arguments below,
+- **read.table()**, contains arguments below,
   - *file*,
   - *header*,logical indicating if the file has a header line
   - *sep*,a string indicating how the columns are seperated
@@ -111,7 +112,7 @@ dimnames("matrix")<-List(c("rowname",c("col name"))
   - *comment.char*
   - *skip*,the number of lines to skip from the beginning
   - *stringsAsFactors*, should character variables be coded as factors.
-- read.csv() is identical except that default separator is a comma, while read.table() is space.
+- **read.csv()** is identical except that default separator is a comma, while read.table() is space.
 - 读取较大数据量的数据时候，注意，设定 comment.char='' 如果不包含任何注释页面，同时确认 *colClasses* 可以增加阅读速度
 ```
 initial<-read.table("database.txt",nrows=100) #读前100行
@@ -198,7 +199,7 @@ good<-complete.cases(x,y) ##返回x和y都不是NA的数值
 **Vectorized Matrix Operation**
 对矩阵的操作类似，也是vector相互操作，**%*%** 才是矩阵
 
-###Swirl###
+### Swirl ###
 
 - type **?c**,会弹出帮助文件，不需要括号
 - list all the objects in your local workspace using **ls()**
@@ -229,7 +230,7 @@ paste(strings, collapse" "), ##
 - negtive integer  ## remove only those vectors
 - named elements
 
-###Control Structures###
+### Control Structures###
 
 **if-else**
 **for**
@@ -238,9 +239,9 @@ paste(strings, collapse" "), ##
 **next**
 **break**
 
-###Environment###
+### Environment ###
 The default Environment for R is always the global enviroment, equal to your workspace, and then it will search the packages that loaded. the base package is always the last one to search, so you have to choose which packages loaded.
-###Function###
+### Function###
 
 - *formal arguements* included in the function defination
 - Function arguments can be missing or might have defalt value
@@ -258,14 +259,14 @@ f<-function(<aguements>){
 - 当不清楚有多少参数会被传递的时候也可以使用
 - 这之后的参数必须精确的描述（不可使用partial matching）
 
-###Logical Expression###
+### Logical Expression###
 - *which*, *all*,*any*
   返回vector中数据序号，符合逻辑判断的
 - *&&* and *&*, *|* and *||*,  & 和 |会循环使用vector
 - xor（）强制或语句
 - isTRUE()
 
-###Function###
+### Function###
 - typing the funtion name without ay arguments or parenthese, then the source code will show
 - *argu* 可以check 函数的arguments
 
@@ -302,7 +303,7 @@ split(x,list(f1,f2)) 不同factor层面上的split
 
 **invisible**  
 
-###Dates and Times###
+### Dates and Times###
 
 **Dates** are represented by the "Date" class
 **Time** are represented by the"POSIXct" and "POSIXlt"classes
@@ -322,7 +323,7 @@ quarters() # returen the quarter
  ```
 
 
- ###Debuging###
+ ### Debuging###
 
  **traceback**, prints out the fucntion call stack after an error occurs. 确认error出现的函数
  **debug**, flags a function for debug mode which allows you to step through execution of a function one line at a time， 写入debug，之后就可以直接调用brower，if出问题
