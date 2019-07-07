@@ -272,10 +272,35 @@ f<-function(<aguements>){
 **lapply**，list apply, lapply returns a list of the same length as X, each element of which is the result of applying FUN to the corresponding element of X.
 
 ```
-lapply(x,fun) # funcition operation on x
+lapply(x,fun) # funcition operation on a list of items
 ```
 
 **sapply**, simply version of lapply  
+**vapply**, 可以规定输出格式，如果不正确，则报错
+
+**apply**,
+function(x, MARGIN,FUN,...),  #  x is a matrix, and MARGIN 是维度，1是row 2是列
+
+**rowSums** = apply(x,1,sum)
+**rowMeans** = apply (x, 1, mean)
+**colSums** = apply(x, 2, sum)
+**colMeans** = apply (x, 2, mean)
+
+**mapply**, is a multivariate apply of sorts which applies a function in parallel oer a set of arguments
+
+mapply(rep,1:4,4:1) #repeat 1:4 分别4：1次， mapply的argument数量要和要处理的数据量一样多。
+
+**tapply**, is used to apply a function over subsets of a vector.
+**vapply**, (X,Index,FUN,...), X (vector), Index (a list of 1 or more factors, same length with X)
+**summary** 提供数据的统计数据，中位数等
+
+**split**, spilt(x, f, drop = FALSE) 空是否用
+interaction(f1,f2) 形成不同的level
+split(x,list(f1,f2)) 不同factor层面上的split
+
+**gl** generat factor level
+
+**invisible**  
 
 ###Dates and Times###
 
@@ -294,4 +319,16 @@ months()  # returen the month
 quarters() # returen the quarter
  t4<-strptime(t3,"%B %d, %Y %H:%M") #change the string with month, date, year, hour:min into a time class
  difftime(Systime(),t1,units="days") #返回两个时间差距的units
- 
+ ```
+
+
+ ###Debuging###
+
+ **traceback**, prints out the fucntion call stack after an error occurs. 确认error出现的函数
+ **debug**, flags a function for debug mode which allows you to step through execution of a function one line at a time， 写入debug，之后就可以直接调用brower，if出问题
+ **browser**, suspends the exectution of a fucntion whenever its called
+ **trace**, allosws u to insert degugging code into a funciton in a specific places
+ **recover**, modify the error behavior so that you can brower the fuction call stack  
+
+ **uniqe** function return a vector, data.frame, or array 去掉重复数据的。一般是针对后面的维度。
+ **table** 用于把某个vector的数据转换成统计表格
