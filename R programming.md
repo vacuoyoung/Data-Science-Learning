@@ -333,3 +333,28 @@ quarters() # returen the quarter
 
  **uniqe** function return a vector, data.frame, or array 去掉重复数据的。一般是针对后面的维度。
  **table** 用于把某个vector的数据转换成统计表格
+
+
+**Str** 可以作为summary的函数的替代，用于现实R对象的内部结构。用于紧凑(compact display large List)
+
+### Generating Random Numbers###
+
+**rnorm**, 生成随机正太分布
+**dnorm**, evaluate the Normal probabily density
+**pnorm**, evaluate the cumulative distribution function for a Normal distribution
+**rpois**, random Poisson
+
+**r** random, **d** for density, **p** for cumulative, **q** for quantile
+
+**set.seed()**, seed can be any integer. 生成伪随机数
+
+**sample** (vector,No.,replacement= TRUE)
+**system.time()** 放入函数块，语句等，返回执行时间
+R分析器，分析R的运行时间，针对相对而言复杂的程序
+Rprof() function starts the profiler in R
+summaryRprof(), read the output of Rprof
+
+### 如何针对data.Frame排序和去除NA###
+subsetting data.frame by column, 会得到一个factor，那么从factor中提取vector的方式是用levels,对特定列作levels会得到所有level的名称，但是不包含重复的 *levels(dataframe[,col])*. 所以，再levevls之后要再获得全部的内容才能形成一个好的vector, *levels(data.frame[,col])[data.frame[,col]]*
+
+ranking的话可以使用order函数
