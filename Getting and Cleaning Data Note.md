@@ -46,7 +46,8 @@
 ```
 libary(data.table)
 DF = data.table(x=rnorm(9),y=rep(c("a","b","c"),each=3),z=rnorm(9))
-tables()
+tables(
+
 DT[2,]
 ```
 Cloumn subsetting in data.table
@@ -71,3 +72,81 @@ DT[, .N, by=x], 把B按照x分成组，然后.N会计算每组中数值出现的
 **Keys in Data table**
 - setkey(DT,x), DT["a"], 则会根据key即x的数据列出所有为a的row
 merge也可以一句key进行
+
+### Reading from MySQL ###
+
+**installation**, intall.packages("RMySQL")
+
+```
+handlerDb <- dbConnect(MySQL(),db=" ",user=" ",host=" ")
+targetDb <- dbGetQuery(handlerDb,"show databases");dbDisconnect(handlerDb)
+```
+**dbConnect**
+**dbGetQuery** 后续执行的操作
+**dbDisconnect**
+**dbListFields**
+**dbReadTable**
+**dbSendQuery** 发出要求，fetch （）返回本地
+
+### Reading from HDF5 ###
+
+bioLite("rhdf5")
+
+library(rdhf5)
+created = h5createFile("example.h5")
+created
+
+created = h5createGroup("example.h5","foo")
+A = mtrix(1:10,br=5,nc=2)
+h5write(A, "example.h5","foo/A",index=list(1:3,1))
+h5read("example.h5","foo/A
+
+### Reading from the Web ###
+
+con = **url("")**
+htmlCode = **readLines(con)**
+close(con)
+htmlCode
+
+html<-thmlTreeParse(url.useInternal )
+
+library(**httr**)
+html2 =GET(url)
+content2 = content (html2, as="text")
+parsedHtml = htmlParse(content2, asText=TRUE)
+xpathSapply(parsedHtml，“//title”,xmlValue)
+
+GET("url", authenticate("user","passwd"))
+
+**using handles**
+google = handle("")
+GET(handle=google, path="/")
+
+### Reading from APIs ###  
+
+Accessing Twitter from R
+
+myapp = oauth_app("twitter", key="your ConsumerKey",secret="your consumer seret")
+sig = sign_oauth1.0(myapp, token="",token_secret="")
+homeTL=GET("https://api.twitter.com/1.1/statuses/home_timeline.json",sig)
+
+json1= content(homeTL)
+json2 = jsonlite::fromJSON(toJSON(json1))
+
+httr allows **GET, POST,PUT,DELET**
+
+### Reading From other Sources ###
+
+file - open a connection to a text file
+url -
+gzfile
+bzfile
+
+foreign package, Loads data from Minitab, SAS, S, SPSS, Stata
+Basic fouctions read.foo
+  - read.arff(Weka)
+  - read.lta(Stata)
+  - read.mtp(Minitab)
+  - read.octave(Octave)
+  - read.spss(SPSS)
+  - read.xport(SAS)
