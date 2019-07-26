@@ -150,3 +150,54 @@ Basic fouctions read.foo
   - read.octave(Octave)
   - read.spss(SPSS)
   - read.xport(SAS)
+
+### Subsetting and Sorting ###
+
+- Dealing with missing values
+  *X[which(X$var2 >8),]*
+  *sort(X,decreasing=TRUE)*
+  *sort(x$var2,na.last=TRUE)*
+  *order()*
+
+- summary() 查看数据的情况
+- str()     数据组情况class 等
+- quantile()  看数据分布情况
+
+*all*, *any*, *is*
+*table(data, %in%, c)*, %in% in 等于
+*xtabs()*
+
+*seq(1:10,by=2)*
+*ifelse()*
+creating categorical variables *cut(dataset, breaks)*
+creating factor variables *factor()*
+*as.numeric()*
+
+*mutate*
+*abs*
+*ceiling*(3.75)=4
+*round*
+
+### Reshaping the Data ###
+
+- Melting data frames
+  *melt(data,id=c("",""),measure.vars=c("",""))*
+  调整数据每个观测是一行
+- Casting data frames
+  *dcast(data, id ~ variable,function)*
+- Averaging values
+  *tapply(row1, row2)*
+- Split
+   *split(row1,row2)*
+   *unlist()*
+
+### dplyr package ##
+
+**dplyr Verbs**
+
+- *select*, return a subset of the columns of a data frame
+- *filter*, extract a subset of rows based on logical conditions
+- *arrange*, reoder rows of a data frame
+- *rename*
+- *mutate*, add new variables/columns or transform existing variables
+- *summarise/summarize*, generate summary statistics of different variables in the data frame
