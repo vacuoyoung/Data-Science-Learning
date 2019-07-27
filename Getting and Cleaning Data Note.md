@@ -269,4 +269,13 @@ flodd|fire, *any*
 "+" at least one of the item
 { } match times max and min
 
-### Date and Time ### 
+### Date and Time ###
+
+*format(d2,"%a %b %d")* format the date output, different % abbreviation
+*weekdays(), month()*
+
+library (lubridate)
+  - ymd("20101208")
+  - mdy("10292019")
+  - ymd-hms()
+  
