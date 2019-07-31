@@ -153,11 +153,11 @@ Basic fouctions read.foo
 
 ### Subsetting and Sorting ###
 
-- Dealing with missing values
+
   *X[which(X$var2 >8),]*
   *sort(X,decreasing=TRUE)*
   *sort(x$var2,na.last=TRUE)*
-  *order()*
+  *X[order(X$var2),]*  
 
 - summary() 查看数据的情况
 - str()     数据组情况class 等
