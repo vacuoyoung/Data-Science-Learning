@@ -156,11 +156,7 @@ Basic fouctions read.foo
   *X[which(X$var2 >8),]*
   *sort(X,decreasing=TRUE)*
   *sort(x$var2,na.last=TRUE)*
-<<<<<<< HEAD
   *order()*, X[order(X$var1,X$Var3),]
-=======
-  *X[order(X$var2),]*  
->>>>>>> 88b284b235d0e85cc66f1594203cd4836c0d223d
 
 - Ordering with plyr
   **Plyr** 程序包 *arrange(X,desc(var1))*
@@ -282,4 +278,3 @@ library (lubridate)
   - ymd("20101208")
   - mdy("10292019")
   - ymd-hms()
-  
