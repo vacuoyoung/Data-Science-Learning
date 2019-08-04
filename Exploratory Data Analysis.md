@@ -75,4 +75,4 @@ dev.cur(), dev.set(<integer>) 切换显示屏幕
 
 Copying Plots
   - *dev. copy*, copy a plot from one device to another
-  - *dev.copy2pdf*, 
+  - *dev.copy2pdf*,
